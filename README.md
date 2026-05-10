@@ -10,7 +10,7 @@ Unfortunately, due to system and security limitations, it is difficult or imposs
 
 The template is based on [this script](https://github.com/yvoinov/memory-tools/blob/main/mem_frag.sh), which was originally written by [Nick Parfenovich](https://github.com/bar0metr).
 
-Note: Although the templates were developed for Zabbix 7.0, they will work on earlier versions as well. Just adjust the version in the template.
+**Note**: Although the templates were developed for Zabbix 7.0, they will work on earlier versions as well. Just adjust the version in the template.
 
 ## Using template
 

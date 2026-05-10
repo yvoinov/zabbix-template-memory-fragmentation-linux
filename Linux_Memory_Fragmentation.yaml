@@ -1,0 +1,25 @@
+zabbix_export:
+  version: '7.0'
+  template_groups:
+    - uuid: 846977d1dfed4968bc5f8bdb363285bc
+      name: 'Templates/Operating systems'
+  templates:
+    - uuid: 8bc8d565ae18493aa8073bb320af8d5b
+      template: 'Linux Memory Fragmentation'
+      name: 'Linux Memory Fragmentation'
+      description: 'Получение оценочной величины фрагментации памяти системы для Linux'
+      groups:
+        - name: 'Templates/Operating systems'
+      items:
+        - uuid: 3fdeeb6d43d948bc9fbb062ecef67acb
+          name: 'Memory fragmentation'
+          key: os.mem_frag
+          value_type: FLOAT
+          units: '%'
+          description: 'Оценка фрагментации памяти системы (значение приблизительное)'
+          triggers:
+            - uuid: 581ced8f1518440ea67cd12f09899ff8
+              expression: 'last(/Linux Memory Fragmentation/os.mem_frag)>80'
+              name: 'High memory fragmentation'
+              priority: WARNING
+              description: 'Уровень фрагментации выше 80%. Начало серьезного свопинга.'
